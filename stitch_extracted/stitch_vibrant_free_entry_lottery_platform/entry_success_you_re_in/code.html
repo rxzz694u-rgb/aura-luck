@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Entry Confirmed</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-error-container": "#93000a",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed": "#ffd9e4",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary": "#ffffff",
+            "on-primary-fixed": "#001d31",
+            "primary-container": "#007bb9",
+            "on-tertiary-fixed": "#3e0022",
+            "on-tertiary-fixed-variant": "#8c0053",
+            "surface-container-high": "#e1e8fd",
+            "secondary-fixed": "#e9ddff",
+            "tertiary": "#b10e6b",
+            "on-secondary-fixed-variant": "#5516be",
+            "on-tertiary-container": "#fffbff",
+            "on-error": "#ffffff",
+            "primary-fixed-dim": "#92ccff",
+            "on-surface": "#141b2b",
+            "outline-variant": "#bfc7d2",
+            "surface-container": "#e9edff",
+            "secondary": "#6b38d4",
+            "on-surface-variant": "#3f4850",
+            "inverse-surface": "#293040",
+            "outline": "#6f7881",
+            "tertiary-container": "#d23284",
+            "on-secondary-container": "#fffbff",
+            "secondary-fixed-dim": "#d0bcff",
+            "surface-container-highest": "#dce2f7",
+            "surface-tint": "#006497",
+            "on-primary-container": "#fdfcff",
+            "on-primary": "#ffffff",
+            "surface-container-low": "#f1f3ff",
+            "primary-fixed": "#cce5ff",
+            "surface-bright": "#f9f9ff",
+            "tertiary-fixed-dim": "#ffb0cd",
+            "secondary-container": "#8455ef",
+            "inverse-primary": "#92ccff",
+            "surface-dim": "#d3daef",
+            "error": "#ba1a1a",
+            "on-primary-fixed-variant": "#004b73",
+            "primary": "#006193",
+            "on-background": "#141b2b",
+            "on-secondary-fixed": "#23005c",
+            "error-container": "#ffdad6",
+            "surface": "#f9f9ff",
+            "background": "#f9f9ff",
+            "inverse-on-surface": "#edf0ff",
+            "surface-variant": "#dce2f7"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "1rem",
+            "gutter": "1rem",
+            "space-lg": "1.5rem",
+            "gutter-desktop": "1.5rem",
+            "margin-desktop": "2rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "space-xl": "2rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["Inter"],
+            "display-lg": ["Inter"],
+            "body-lg": ["Inter"],
+            "headline-md": ["Inter"],
+            "display-lg-mobile": ["Inter"],
+            "label-lg": ["Inter"],
+            "label-md": ["Inter"],
+            "headline-sm": ["Inter"],
+            "headline-lg-mobile": ["Inter"],
+            "label-sm": ["Inter"],
+            "body-sm": ["Inter"],
+            "body-md": ["Inter"],
+            "mono": ["JetBrains Mono", "monospace"]
+          },
+          "fontSize": {
+            "headline-lg": ["26px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "display-lg": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "22px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "headline-md": ["19px", { "lineHeight": "24px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "display-lg-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.025em", "fontWeight": "700" }],
+            "label-lg": ["15px", { "lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "headline-sm": ["17px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "body-md": ["15px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      display: inline-block;
+      line-height: 1;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+      -webkit-font-smoothing: antialiased;
+    }
+    @keyframes floatParticle {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(14deg); }
+    }
+    @keyframes checkPop {
+      0% { transform: scale(0.6) rotate(-10deg); opacity: 0; }
+      70% { transform: scale(1.08) rotate(2deg); opacity: 1; }
+      100% { transform: scale(1) rotate(0deg); opacity: 1; }
+    }
+    .animate-float {
+      animation: floatParticle 3.5s ease-in-out infinite;
+    }
+    .animate-pop {
+      animation: checkPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex justify-center items-center font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- iOS Viewport Simulation Canvas (390x844) -->
+<div class="relative w-full max-w-[390px] h-[844px] bg-surface-dim overflow-hidden shadow-2xl flex flex-col justify-end">
+<!-- Background Dimmed Backdrop Simulation -->
+<div class="absolute inset-0 bg-on-surface/30 backdrop-blur-sm z-0"></div>
+<!-- Modal Sheet Container with iOS Inset & Top Corner Radii -->
+<div class="relative z-10 w-full bg-surface-container-lowest rounded-t-[32px] shadow-[0_-12px_40px_rgba(20,27,43,0.12)] flex flex-col max-h-[810px] overflow-y-auto px-5 pt-3 pb-8">
+<!-- iOS Modal Drag Handle -->
+<div class="w-full flex justify-center pb-3">
+<div class="w-9 h-1 bg-outline-variant/60 rounded-full"></div>
+</div>
+<!-- Top Celebratory Graphic with Confetti Accent Elements -->
+<div class="relative flex flex-col items-center justify-center mt-2 mb-3">
+<!-- Floating Subtle Confetti Sprinkles -->
+<span class="absolute -top-1 left-16 w-2.5 h-2.5 rounded-full bg-primary-fixed-dim animate-float" style="animation-delay: 0.2s;"></span>
+<span class="absolute top-3 right-16 w-3 h-1.5 rounded-sm bg-secondary-fixed-dim rotate-45 animate-float" style="animation-delay: 0.7s;"></span>
+<span class="absolute bottom-2 left-20 w-2 h-2 rounded-sm bg-tertiary-fixed rotate-12 animate-float" style="animation-delay: 0.4s;"></span>
+<span class="absolute bottom-4 right-20 w-2 h-2 rounded-full bg-primary-container animate-float" style="animation-delay: 1s;"></span>
+<!-- Celebratory Gradient Circle with Checkmark -->
+<div class="w-20 h-20 rounded-full bg-gradient-to-tr from-secondary-container via-primary-container to-primary-fixed-dim p-[3px] shadow-[0_8px_24px_rgba(107,56,212,0.25)] flex items-center justify-center animate-pop">
+<div class="w-full h-full rounded-full bg-gradient-to-tr from-secondary to-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-[42px]" style="font-variation-settings: 'FILL' 1, 'wght' 700;">check</span>
+</div>
+</div>
+</div>
+<!-- Title & Subtitle Section -->
+<div class="text-center px-2 mb-5">
+<h1 class="text-headline-lg-mobile font-headline-lg-mobile text-on-surface font-extrabold tracking-tight mb-1.5">
+          You're in! 🎉
+        </h1>
+<p class="text-body-md font-body-md text-on-surface-variant">
+          Your entry has been successfully registered.
+        </p>
+</div>
+<!-- Premium iOS Ticket Pass Card -->
+<div class="relative bg-surface-container-low border border-outline-variant/30 rounded-3xl overflow-hidden shadow-[0_2px_12px_rgba(0,0,0,0.03)] mb-6">
+<!-- Top Section of Ticket -->
+<div class="p-4 bg-surface-container-lowest">
+<div class="flex items-center justify-between mb-3">
+<span class="text-label-sm font-label-sm uppercase tracking-wider text-outline">ENTRY TICKET PASS</span>
+<div class="inline-flex items-center px-2 py-0.5 rounded-full bg-primary-fixed/50 text-on-primary-fixed">
+<span class="text-label-sm font-label-sm font-mono">CONFIRMED</span>
+</div>
+</div>
+<div class="flex justify-between items-baseline mb-2">
+<div>
+<p class="text-label-xs text-outline text-[11px] font-semibold">ENTRY ID</p>
+<p class="font-mono text-headline-sm font-headline-sm font-bold text-on-surface tracking-tight">#A82K91</p>
+</div>
+<div class="text-right">
+<p class="text-label-xs text-outline text-[11px] font-semibold">DRAW DATE</p>
+<p class="text-label-md font-label-md text-on-surface font-semibold">Sep 25, 2026</p>
+</div>
+</div>
+<div class="mt-2 pt-2.5 border-t border-surface-container-high/70 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary-fixed/40 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">featured_seasonal_and_gifts</span>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-outline">Prize Pool</p>
+<p class="text-label-lg font-label-lg font-bold text-on-surface">$500 CASH Free Giveaway</p>
+</div>
+</div>
+<span class="text-body-sm font-body-sm text-on-surface-variant">9:00 PM EST</span>
+</div>
+</div>
+<!-- Perforated Ticket Divider Line with Left & Right Cutout Notches -->
+<div class="relative w-full h-4 bg-surface-container-low flex items-center justify-center">
+<div class="absolute -left-2.5 w-5 h-5 rounded-full bg-surface-container-lowest border border-outline-variant/30"></div>
+<div class="w-full border-t-2 border-dashed border-outline-variant/50 mx-4"></div>
+<div class="absolute -right-2.5 w-5 h-5 rounded-full bg-surface-container-lowest border border-outline-variant/30"></div>
+</div>
+<!-- Bottom Section of Ticket (Telegram Integration Status) -->
+<div class="px-4 py-3.5 bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-fixed text-primary text-label-sm font-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+              Telegram connected
+            </div>
+<span class="text-label-sm font-label-sm text-primary font-medium">Auto-Sync</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant leading-tight">
+            You'll receive the result on Telegram in <span class="font-semibold text-on-surface">@alex92</span> the instant the draw concludes.
+          </p>
+</div>
+</div>
+<!-- Action Buttons Cluster -->
+<div class="flex flex-col gap-2.5 w-full">
+<!-- Primary CTA: Full-width rounded-2xl iOS Button with Electric Purple to Cyan gradient -->
+<button class="w-full h-12 rounded-2xl bg-gradient-to-r from-secondary-container via-primary-container to-primary-fixed-dim text-on-primary font-label-lg text-label-lg shadow-[0_4px_16px_rgba(0,123,185,0.28)] flex items-center justify-center gap-2 active:scale-[0.98] transition-transform duration-150" type="button">
+<span>View My Entry</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<!-- Secondary Action: iOS Style Pill Button -->
+<button class="w-full h-11 rounded-2xl bg-surface-container text-primary font-label-md text-label-md flex items-center justify-center gap-1.5 active:scale-[0.98] transition-transform duration-150 border border-outline-variant/30" type="button">
+<span class="material-symbols-outlined text-[18px]">share</span>
+<span>Share (+1 Bonus Chance)</span>
+</button>
+<!-- Dismiss / Return Link -->
+<div class="w-full text-center pt-1">
+<button class="text-label-md font-label-md text-outline hover:text-on-surface transition-colors py-1" type="button">
+            Back to Active Draws
+          </button>
+</div>
+</div>
+<!-- iOS Home Indicator Cushion -->
+<div class="w-full flex justify-center pt-3 pb-1">
+<div class="w-32 h-1 bg-on-surface/20 rounded-full"></div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>LuckyDraw - Free Telegram Lottery</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "apple-bg": "#F8F9FB",
+            "apple-card": "#FFFFFF",
+            "apple-subtext": "#86868B",
+            "apple-dark": "#1D1D1F",
+            "apple-accent": "#0071E3",
+            "surface-container-lowest": "#ffffff"
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', 'Inter', 'SF Pro Display', 'sans-serif'],
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-8px)' },
+            }
+          },
+          animation: {
+            float: 'float 5s ease-in-out infinite',
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 22px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+    .pb-safe {
+      padding-bottom: max(env(safe-area-inset-bottom, 20px), 20px);
+    }
+    .pt-safe {
+      padding-top: max(env(safe-area-inset-top, 16px), 16px);
+    }
+    body {
+      background-color: #F8F9FB;
+      -webkit-tap-highlight-color: transparent;
+      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    }
+  </style>
+</head>
+<body class="bg-apple-bg text-[#1D1D1F] font-sans antialiased min-h-screen selection:bg-purple-100">
+<!-- Apple App Store mobile framing (390px centered) -->
+<div class="w-full max-w-[390px] mx-auto min-h-screen flex flex-col relative pb-32">
+<!-- Top iOS Navigation & Profile Bar -->
+<header class="w-full px-6 pt-safe pt-3 pb-2 flex justify-between items-center z-30">
+<div class="flex flex-col">
+<span class="text-[13px] font-medium text-apple-subtext tracking-tight uppercase">Good evening</span>
+<h1 class="text-[28px] font-extrabold tracking-tight text-apple-dark leading-tight mt-0.5">
+        Your Next<br/>Lucky Moment.
+      </h1>
+</div>
+<!-- Apple-style Minimal User Pill -->
+<div class="flex items-center gap-2 bg-white/80 backdrop-blur-md px-2.5 py-1.5 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-black/[0.04] active:scale-95 transition-transform duration-150 cursor-pointer self-start mt-1">
+<div class="relative w-7 h-7 rounded-full overflow-hidden bg-slate-100 flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="High quality realistic iOS style rounded profile portrait of Alex wearing modern glasses with soft natural lighting and light pastel studio gradient background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8N73aFEqrWm_7kjwxhaWGQx1Ykj0k-1kSsOddhNQLCHkzxz-hxhFXYGIg3GDBtXylYdrsseWJG7TJdaVNArgdWhsGFByS5EaGlyM6Cbikh2jFV_RXx3MBOCLqRcUKEvA7o87xaSSMKTTjzVrDJEt-8mxH9iI1uwJfU8xdoty7D8LECukKyRrAdBRH4Ps3xvlhyg6W_UZrV64c4Bm6taeNIHpxAdxihw__H_exSW97risHIRcfTPqlzw"/>
+</div>
+<span class="text-[13px] font-semibold text-apple-dark pr-1">@alex92</span>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 px-5 flex flex-col gap-5 mt-2">
+<!-- Featured Hero Showcase (Apple Design Style) -->
+<section class="relative bg-white rounded-[32px] p-6 shadow-[0_4px_24px_rgba(0,0,0,0.03)] border border-black/[0.03] flex flex-col items-center text-center overflow-hidden">
+<!-- Subtle ambient pastel glow in background -->
+<div class="absolute -top-16 left-1/2 -translate-x-1/2 w-64 h-64 bg-gradient-to-tr from-purple-200/40 via-sky-100/50 to-pink-100/40 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Floating 3D Render Orb -->
+<div class="relative w-56 h-56 my-1 flex items-center justify-center animate-float">
+<img class="w-full h-full object-contain filter drop-shadow-[0_20px_25px_rgba(139,92,246,0.12)]" data-alt="Apple marketing 3D render of an abstract lucky draw sphere: frosted translucent glass orb with caustic inner light, containing floating pastel holographic lottery balls, soft ambient studio lighting, pure white background, subtle electric purple and cyan glow reflections, ultra-clean industrial design, high-end Apple product render, minimal, elegant, 8k" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8KkF0PDXCqWqLmU2oS3_JREdMFuXdtOYjuzlGmmCa5laCx5QUQDBS4To8WEobA_dB_FUVacEg03s4nlFfnB2PeE8qAYzURnu3ebCNkU2059n5-iqRA_3kAVHkHbfFrskg4jS9uDcM57aXAbro6c-0ymiChSx5yFJ0uGmbbSFqiPdo5s0OBCRXP0ajKRO9tGthoAm1yY2KMIIfE57lJIW1EpcWVncORVYbq7BvH_lbpXqQk8ZMCLyijQ"/>
+</div>
+<!-- Hero Typography -->
+<div class="flex flex-col items-center mt-2 mb-6">
+<span class="text-[12px] font-semibold tracking-wider text-purple-600 uppercase bg-purple-50 px-3 py-1 rounded-full mb-2">Free Weekly Draw</span>
+<h2 class="text-[34px] font-black tracking-tight text-apple-dark leading-none">
+          Win up to <span class="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">$5,000</span>
+</h2>
+<p class="text-[14px] text-apple-subtext mt-2 font-normal leading-snug max-w-[280px]">
+          Verified entries drawn live every Sunday night. Completely free to join.
+        </p>
+</div>
+<!-- Primary CTA: Vibrant Electric Purple to Blue Button -->
+<button class="w-full h-14 bg-gradient-to-r from-[#8B5CF6] via-[#6366F1] to-[#3B82F6] text-white rounded-full font-semibold text-[17px] tracking-tight shadow-[0_10px_25px_rgba(99,102,241,0.35)] active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-2 group">
+<span>Enter Free</span>
+<span class="material-symbols-outlined text-[20px] transition-transform duration-200 group-hover:translate-x-0.5" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</section>
+<!-- Featured Live Draw: Clean Apple Card -->
+<section class="bg-white rounded-[28px] p-5 shadow-[0_4px_24px_rgba(0,0,0,0.03)] border border-black/[0.03] flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+</span>
+<span class="text-[12px] font-semibold text-apple-subtext uppercase tracking-wider">Live Countdown</span>
+</div>
+<span class="text-[12px] font-medium text-apple-subtext">4,821 joined</span>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div>
+<h3 class="text-[20px] font-bold text-apple-dark tracking-tight">$500 Cash Prize</h3>
+<p class="text-[26px] font-black tracking-tight text-apple-dark mt-0.5 font-mono">
+            02<span class="text-apple-subtext/50">:</span>14<span class="text-apple-subtext/50">:</span>38
+          </p>
+</div>
+<button class="h-10 px-5 bg-apple-dark text-white rounded-full font-semibold text-[14px] active:scale-95 transition-transform duration-150 shadow-sm">
+          Enter
+        </button>
+</div>
+</section>
+<!-- Telegram Connection: Subtle Apple Native Pill Card -->
+<section class="bg-white/80 rounded-2xl p-4 shadow-[0_2px_12px_rgba(0,0,0,0.02)] border border-black/[0.03] flex items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-[#0088cc]/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[#0088cc] text-[20px]" data-icon="send" style="font-variation-settings: 'FILL' 1;">send</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[13px] font-semibold text-apple-dark">Stay connected</span>
+<span class="text-[12px] text-apple-subtext leading-tight">Instant draw results on Telegram</span>
+</div>
+</div>
+<div class="flex items-center gap-1 bg-emerald-50 text-emerald-700 px-2.5 py-1 rounded-full text-[11px] font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+<span>Connected</span>
+</div>
+</section>
+</main>
+<!-- iOS Frosted Native Tab Bar -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 flex justify-around items-center pt-2 pb-safe max-w-[390px] mx-auto bg-white/75 backdrop-blur-2xl border-t border-black/[0.04]">
+<!-- Home (Active) -->
+<a class="flex flex-col items-center justify-center text-apple-dark active:scale-90 transition-transform duration-150 py-1 px-3" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-[10px] font-semibold mt-0.5 tracking-tight">Home</span>
+</a>
+<!-- Draws -->
+<a class="flex flex-col items-center justify-center text-apple-subtext hover:text-apple-dark active:scale-90 transition-transform duration-150 py-1 px-3" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="featured_seasonal_and_gifts">featured_seasonal_and_gifts</span>
+<span class="text-[10px] font-medium mt-0.5 tracking-tight">Draws</span>
+</a>
+<!-- Winners -->
+<a class="flex flex-col items-center justify-center text-apple-subtext hover:text-apple-dark active:scale-90 transition-transform duration-150 py-1 px-3" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="emoji_events">emoji_events</span>
+<span class="text-[10px] font-medium mt-0.5 tracking-tight">Winners</span>
+</a>
+<!-- Entries -->
+<a class="flex flex-col items-center justify-center text-apple-subtext hover:text-apple-dark active:scale-90 transition-transform duration-150 py-1 px-3" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="confirmation_number">confirmation_number</span>
+<span class="text-[10px] font-medium mt-0.5 tracking-tight">Entries</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-apple-subtext hover:text-apple-dark active:scale-90 transition-transform duration-150 py-1 px-3" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="person">person</span>
+<span class="text-[10px] font-medium mt-0.5 tracking-tight">Profile</span>
+</a>
+</nav>
+</div>
+</body></html>
