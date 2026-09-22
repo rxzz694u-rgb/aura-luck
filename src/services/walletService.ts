@@ -6,6 +6,8 @@ export interface Transaction {
   amount: number;
   label: string;
   date: string;
+  method?: string;
+  status?: 'completed' | 'pending' | 'failed';
 }
 
 const BAL_KEY = 'packdraw_balance';
@@ -43,17 +45,17 @@ export const WalletService = {
   getTransactions(): Transaction[] {
     return readTx();
   },
-  deposit(amount: number): { balance: number; txs: Transaction[] } {
-    const bal = readBal() + amount;
-    const txs = [{ id: `tx-${Date.now()}`, type: 'deposit' as TxType, amount, label: 'Deposit via card', date: new Date().toISOString() }, ...readTx()];
+  deposit(amount: number, label = 'Deposit', method = 'card'): { balance: number; txs: Transaction[] } {
+    const bal = +(readBal() + amount).toFixed(2);
+    const txs = [{ id: `tx-${Date.now()}`, type: 'deposit' as TxType, amount, label, date: new Date().toISOString(), method, status: 'completed' as const }, ...readTx()];
     persist(bal, txs);
     return { balance: bal, txs };
   },
-  withdraw(amount: number): { balance: number; txs: Transaction[]; error?: string } {
+  withdraw(amount: number, label = 'Withdraw', method = 'bank'): { balance: number; txs: Transaction[]; error?: string } {
     const bal = readBal();
     if (amount > bal) return { balance: bal, txs: readTx(), error: 'Insufficient balance' };
-    const nb = bal - amount;
-    const txs = [{ id: `tx-${Date.now()}`, type: 'withdraw' as TxType, amount: -amount, label: 'Withdraw to wallet', date: new Date().toISOString() }, ...readTx()];
+    const nb = +(bal - amount).toFixed(2);
+    const txs = [{ id: `tx-${Date.now()}`, type: 'withdraw' as TxType, amount: -amount, label, date: new Date().toISOString(), method, status: 'pending' as const }, ...readTx()];
     persist(nb, txs);
     return { balance: nb, txs };
   },

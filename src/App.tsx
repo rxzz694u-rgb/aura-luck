@@ -195,16 +195,16 @@ export function App() {
     return EntryService.hasEntered(giveawayId);
   };
 
-  const handleDeposit = (amount: number): string | null => {
-    const { balance: b, txs: t } = WalletService.deposit(amount);
+  const handleDeposit = (amount: number, methodLabel = 'Card', methodId = 'card'): string | null => {
+    const { balance: b, txs: t } = WalletService.deposit(amount, `Deposit via ${methodLabel}`, methodId);
     setBalance(b);
     setTxs(t);
     showToast('Deposit successful', `$${amount.toFixed(2)} added to wallet`, 'success');
     return null;
   };
 
-  const handleWithdraw = (amount: number): string | null => {
-    const { balance: b, txs: t, error } = WalletService.withdraw(amount);
+  const handleWithdraw = (amount: number, methodLabel = 'Wallet', methodId = 'bank'): string | null => {
+    const { balance: b, txs: t, error } = WalletService.withdraw(amount, `Withdraw to ${methodLabel}`, methodId);
     if (error) return error;
     setBalance(b);
     setTxs(t);
