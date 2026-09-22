@@ -6,7 +6,7 @@ import {
 } from 'lucide-react';
 import { Transaction } from '../../services/walletService';
 import { PAYMENT_CONFIG, isLiveCheckout, isTestMode } from '../../services/payments';
-import { Mark, MethodGrid, PAY_METHODS, PayMethod } from '../ui/PaymentLogos';
+import { Mark, MethodRail, PAY_METHODS, PayMethod } from '../ui/PaymentLogos';
 
 interface WalletModalProps {
   isOpen: boolean;
@@ -263,7 +263,12 @@ export const WalletModal: React.FC<WalletModalProps> = ({ isOpen, onClose, balan
                 </div>
               ) : tab === 'deposit' ? (
                 <div className="flex flex-col gap-4">
-                  <MethodGrid selected={depMethod} onSelect={(m) => { setDepMethod(m); setError(null); }} />
+                  <div>
+                    <p className="text-[11px] font-black uppercase tracking-widest text-[#64748B]">Pay with</p>
+                    <div className="mt-2">
+                      <MethodRail selected={depMethod} onSelect={(m) => { setDepMethod(m); setError(null); }} />
+                    </div>
+                  </div>
                   <div>
                     <p className="text-[11px] font-black uppercase tracking-widest text-[#64748B]">Amount (USD)</p>
                     <div className="mt-1.5 flex items-center rounded-2xl bg-white/[0.04] border border-white/[0.08] px-4 h-14 focus-within:border-[#C8FF00]/60">
@@ -276,12 +281,12 @@ export const WalletModal: React.FC<WalletModalProps> = ({ isOpen, onClose, balan
                         placeholder="25.00"
                       />
                     </div>
-                    <div className="mt-2 flex gap-1.5 flex-wrap">
+                    <div className="mt-2 flex gap-1.5 overflow-x-auto no-scrollbar -mx-1 px-1 pb-0.5">
                       {QUICK.map((q) => (
                         <button
                           key={q}
                           onClick={() => setAmount(String(q))}
-                          className={`px-3 h-9 rounded-full text-[12px] font-bold border transition-all active:scale-95 ${
+                          className={`shrink-0 px-4 h-9 rounded-full text-[12px] font-bold border transition-all active:scale-95 ${
                             amount === String(q) ? 'bg-[#C8FF00] text-black border-transparent' : 'bg-white/[0.04] text-zinc-300 border-white/[0.08]'
                           }`}
                         >
@@ -314,11 +319,16 @@ export const WalletModal: React.FC<WalletModalProps> = ({ isOpen, onClose, balan
                 </div>
               ) : (
                 <div className="flex flex-col gap-4">
-                  <MethodGrid
-                    selected={wdMethod}
-                    onSelect={(m) => { setWdMethod(m); setError(null); }}
-                    filter={(m) => m.kind === 'bank' || m.kind === 'crypto' || m.id === 'visa' || m.id === 'mastercard' || m.id === 'upi' || m.id === 'gcash' || m.id === 'maya'}
-                  />
+                  <div>
+                    <p className="text-[11px] font-black uppercase tracking-widest text-[#64748B]">Withdraw to</p>
+                    <div className="mt-2">
+                      <MethodRail
+                        selected={wdMethod}
+                        onSelect={(m) => { setWdMethod(m); setError(null); }}
+                        filter={(m) => m.kind === 'bank' || m.kind === 'crypto' || m.id === 'visa' || m.id === 'mastercard' || m.id === 'upi' || m.id === 'gcash' || m.id === 'maya'}
+                      />
+                    </div>
+                  </div>
                   <div>
                     <p className="text-[11px] font-black uppercase tracking-widest text-[#64748B]">
                       {wdMethod === 'bank' ? 'Destination IBAN / account' : wdMethod === 'visa' || wdMethod === 'mastercard' || wdMethod === 'amex' ? 'Destination card' : wdMethod === 'upi' ? 'Destination UPI ID' : wdMethod === 'gcash' || wdMethod === 'maya' ? 'Destination mobile number' : 'Destination address'}

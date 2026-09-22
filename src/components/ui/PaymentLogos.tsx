@@ -63,31 +63,23 @@ export const Mark: React.FC<{ id: PayMethod; className?: string }> = ({ id, clas
       return (
         <svg viewBox="0 0 56 28" className={className} role="img" aria-label="PayPal">
           <rect width="56" height="28" rx="6" fill="#fff" />
-          <path d="M20 7h6.5c2.4 0 4 1.3 4 3.4 0 2.5-2 4-4.8 4h-2.3l-.8 5H19z" fill="#003087" />
-          <path d="M24.5 7H31c2.4 0 4 1.3 4 3.4 0 2.5-2 4-4.8 4h-2.3l-.8 5h-3.6z" fill="#009CDE" opacity="0.85" />
-          <text x="28" y="25" textAnchor="middle" fontSize="6.5" fontWeight="800" fontStyle="italic" fill="#003087" fontFamily="Arial, sans-serif">PayPal</text>
+          <text x="28" y="19" textAnchor="middle" fontSize="11" fontWeight="900" fontStyle="italic" fill="#003087" fontFamily="Arial, sans-serif">Pay<tspan fill="#009CDE">Pal</tspan></text>
         </svg>
       );
     case 'applepay':
       return (
         <svg viewBox="0 0 56 28" className={className} role="img" aria-label="Apple Pay">
           <rect width="56" height="28" rx="6" fill="#000" />
-          <path d="M20.6 9.2c-.5-.6-1.3-1-2-1-.1 1-.4 2 .1 2.9.5.7 1.4 1.1 2.1 1-.1-1 .3-2.1-.2-2.9zm-1 3.2c-1 0-1.9.6-2.4.6-.5 0-1.3-.6-2.1-.6-1.7 0-3.1 1.4-3.1 3.9 0 2.9 1.9 5.7 3.4 5.7.7 0 1.2-.5 2.2-.5 1 0 1.3.5 2.2.5 1.5 0 3.2-2.9 3.3-3-.1 0-2.1-.8-2.1-2.8 0-1.4 1.1-2.3 1.2-2.4-.6-1-1.6-1.4-2.6-1.4z" fill="#fff" transform="translate(0,-1) scale(0.92)" />
-          <text x="34" y="18.5" fontSize="10" fontWeight="600" fill="#fff" fontFamily="Arial, sans-serif">Pay</text>
+          <text x="21" y="19" textAnchor="middle" fontSize="13" fill="#fff" fontFamily="Arial, sans-serif"></text>
+          <text x="35" y="18.5" textAnchor="middle" fontSize="10" fontWeight="600" fill="#fff" fontFamily="Arial, sans-serif">Pay</text>
         </svg>
       );
     case 'gpay':
       return (
         <svg viewBox="0 0 56 28" className={className} role="img" aria-label="Google Pay">
           <rect width="56" height="28" rx="6" fill="#fff" />
-          <g transform="translate(13,14)">
-            <path d="M-4.5-6.5A7.5 7.5 0 0 1 3-6l-2 2.4a4.5 4.5 0 0 0-5.5-.4z" fill="#EA4335" />
-            <path d="M-6.6-.6A7.6 7.6 0 0 1-4.5-6.5l2.4 1.8a4.6 4.6 0 0 0-1.2 4.1z" fill="#FBBC05" />
-            <path d="M-4.5 6.5A7.5 7.5 0 0 1-6.6-.6l2.4-1.8a4.6 4.6 0 0 0 5 3.3z" fill="#34A853" />
-            <path d="M3 6A7.5 7.5 0 0 1-4.5 6.5l.7-2.9A4.5 4.5 0 0 0 3 3.4z" fill="#4285F4" />
-            <rect x="3" y="-1.4" width="4.6" height="2.8" fill="#4285F4" />
-          </g>
-          <text x="36" y="18" fontSize="9.5" fontWeight="600" fill="#5F6368" fontFamily="Arial, sans-serif">Pay</text>
+          <text x="20" y="19.5" textAnchor="middle" fontSize="14" fontWeight="900" fill="#4285F4" fontFamily="Arial, sans-serif">G</text>
+          <text x="37" y="18.5" textAnchor="middle" fontSize="10" fontWeight="600" fill="#5F6368" fontFamily="Arial, sans-serif">Pay</text>
         </svg>
       );
     case 'stripe':
@@ -101,9 +93,8 @@ export const Mark: React.FC<{ id: PayMethod; className?: string }> = ({ id, clas
       return (
         <svg viewBox="0 0 56 28" className={className} role="img" aria-label="UPI">
           <rect width="56" height="28" rx="6" fill="#fff" />
-          <path d="M12 8l5 6 5-6h3.4L19.5 15l5.9 7H22l-5-6-5 6h-3.4l5.9-7L8.6 8z" fill="#097939" transform="translate(4,1) scale(0.85)" />
-          <text x="36" y="18.5" fontSize="10.5" fontWeight="900" fontStyle="italic" fill="#097939" fontFamily="Arial, sans-serif">UPI</text>
-          <path d="M33 8.5l4 2.6-4 2.6z" fill="#ED752E" />
+          <text x="26" y="18.5" textAnchor="middle" fontSize="10.5" fontWeight="900" fontStyle="italic" fill="#097939" fontFamily="Arial, sans-serif">UPI</text>
+          <rect x="12" y="20.5" width="32" height="2" rx="1" fill="#ED752E" />
         </svg>
       );
     case 'gcash':
@@ -165,44 +156,40 @@ export const Mark: React.FC<{ id: PayMethod; className?: string }> = ({ id, clas
   }
 };
 
-export const MethodGrid: React.FC<{
+export const MethodRail: React.FC<{
   selected: PayMethod;
   onSelect: (m: PayMethod) => void;
   filter?: (m: (typeof PAY_METHODS)[number]) => boolean;
 }> = ({ selected, onSelect, filter }) => {
-  const groups: { title: string; items: typeof PAY_METHODS }[] = [
-    { title: 'Cards', items: PAY_METHODS.filter((m) => m.kind === 'card') },
-    { title: 'Digital wallets', items: PAY_METHODS.filter((m) => m.kind === 'wallet') },
-    { title: 'Crypto', items: PAY_METHODS.filter((m) => m.kind === 'crypto') },
-    { title: 'Bank', items: PAY_METHODS.filter((m) => m.kind === 'bank') },
-  ];
+  const items = filter ? PAY_METHODS.filter(filter) : PAY_METHODS;
+  const active = PAY_METHODS.find((m) => m.id === selected);
   return (
-    <div className="flex flex-col gap-3">
-      {groups.map((g) => {
-        const items = filter ? g.items.filter(filter) : g.items;
-        if (items.length === 0) return null;
-        return (
-          <div key={g.title}>
-            <p className="text-[11px] font-black uppercase tracking-widest text-[#64748B]">{g.title}</p>
-            <div className="mt-1.5 grid grid-cols-3 gap-2">
-              {items.map((m) => (
-                <button
-                  key={m.id}
-                  onClick={() => onSelect(m.id)}
-                  className={`h-[52px] rounded-2xl border flex flex-col items-center justify-center gap-0.5 transition-all active:scale-95 ${
-                    selected === m.id
-                      ? 'border-[#C8FF00] bg-[#C8FF00]/[0.07] ring-1 ring-[#C8FF00]/50'
-                      : 'border-white/[0.08] bg-white/[0.03] hover:bg-white/[0.06]'
-                  }`}
-                >
-                  <Mark id={m.id} />
-                  <span className="text-[9px] font-bold text-[#94A3B8]">{m.label}</span>
-                </button>
-              ))}
-            </div>
-          </div>
-        );
-      })}
+    <div>
+      <div className="flex gap-2 overflow-x-auto no-scrollbar -mx-5 px-5 pb-1 snap-x">
+        {items.map((m) => (
+          <button
+            key={m.id}
+            onClick={() => onSelect(m.id)}
+            className={`snap-start shrink-0 w-[76px] rounded-2xl border flex flex-col items-center justify-center gap-1 py-2 transition-all active:scale-95 ${
+              selected === m.id
+                ? 'border-[#C8FF00] bg-[#C8FF00]/[0.07] ring-1 ring-[#C8FF00]/50'
+                : 'border-white/[0.08] bg-white/[0.03]'
+            }`}
+          >
+            <Mark id={m.id} className="h-6 w-12" />
+            <span className="text-[9px] font-bold text-[#94A3B8] leading-none">{m.label}</span>
+          </button>
+        ))}
+      </div>
+      {active && (
+        <div className="mt-2 flex items-center justify-between rounded-2xl bg-black/25 border border-white/[0.08] px-3.5 py-2.5">
+          <span className="flex items-center gap-2.5 min-w-0">
+            <Mark id={active.id} className="h-6 w-12 shrink-0" />
+            <span className="text-[12px] font-bold text-white truncate">{active.label}</span>
+          </span>
+          <span className="text-[11px] text-[#64748B] shrink-0 ml-2">{active.hint}</span>
+        </div>
+      )}
     </div>
   );
 };
